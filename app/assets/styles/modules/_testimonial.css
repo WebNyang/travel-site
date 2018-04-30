@@ -10,4 +10,16 @@
     top: -80px;
     border: 6px solid rgba(255, 255, 255, .8);
   }
+
+  &__title {
+    color: $mainBlue;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__subtitle {
+
+  }
 }
