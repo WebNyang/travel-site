@@ -62,4 +62,16 @@
       width: 63%
     }
   }
+
+  /* Begin equal height rule */
+  &--equal-height-at-medium {
+    @mixin atMedium {
+      display: flex;
+
+      & > div {
+        float: none;
+        display: flex;
+      }
+    }
+  }
 }
