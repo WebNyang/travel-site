@@ -8,6 +8,10 @@
     padding: 0 1.8125rem 1px 1.8125rem;
   }
 
+  &--last {
+    margin-bottom: 0;
+  }
+
   &__photo {
     display: block;
     border-radius: 50%;
