@@ -1,6 +1,10 @@
 .testimonial {
   background: rgba(255, 255, 255, .8);
-  padding: 0 1.8125rem 1px 1.8125rem;
+  padding: 0 18px 1px 18px;
+
+  @mixin atMedium {
+    padding: 0 1.8125rem 1px 1.8125rem;
+  }
 
   &__photo {
     display: block;
