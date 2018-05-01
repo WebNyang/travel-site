@@ -3,7 +3,10 @@
   position: absolute;
   width: 100%;
   z-index: 2;
-  background-color: rgba($mainBlue, .3);
+
+  @mixin atMedium {
+    background-color: rgba($mainBlue, .3);
+  }
 
   &__btn-container {
     float: right;
