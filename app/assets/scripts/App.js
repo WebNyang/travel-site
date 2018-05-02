@@ -1,3 +1,3 @@
-const $ = require('jquery');
+import MobileMenu from './modules/MobileMenu';
 
-console.log("This is a test!");
+var mobileMenu = new MobileMenu();
