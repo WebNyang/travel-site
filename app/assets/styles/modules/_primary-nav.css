@@ -1,4 +1,10 @@
 .primary-nav {
+  padding-top: 5px;
+
+  @mixin atMedium {
+    padding-top: 0;
+  }
+
   &--pull-right {
     @mixin atMedium {
       float: right;
