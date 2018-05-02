@@ -5,6 +5,15 @@ const usemin = require('gulp-usemin');
 const rev = require('gulp-rev');
 const cssnano = require('gulp-cssnano');
 const uglify = require('gulp-uglify');
+const browserSync = require('browser-sync').create();
+
+gulp.task('previewDist', function() {
+  browserSync.init({
+    server: {
+      baseDir: "dist"
+    }
+  });
+});
 
 gulp.task('deleteDistFolder', function() {
   return del("./dist");
