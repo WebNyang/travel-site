@@ -10,6 +10,20 @@ gulp.task('deleteDistFolder', function() {
   return del("./dist");
 });
 
+gulp.task('copyGeneralFiles', ['deleteDistFolder'], function() {
+  var pathsToCopy = [
+    './app/**/*',
+    '!./app/index.html',
+    '!./app/assets/images/**',
+    '!./app/assets/styles/**',
+    '!./app/assets/scripts/**',
+    '!./app/temp',
+    '!./app/temp/**'
+  ];
+  return gulp.src(pathsToCopy)
+    .pipe(gulp.dest("./dist"));
+});
+
 gulp.task('optimizeImages', ['deleteDistFolder'], function() {
   return gulp.src(['./app/assets/images/**/*', '!./app/assets/images/icons', '!./app/assets/images/icons/**/*'])
     .pipe(imagemin({
@@ -29,4 +43,4 @@ gulp.task('usemin', ['deleteDistFolder'], function() {
     .pipe(gulp.dest("./dist"));
 });
 
-gulp.task('build', ['deleteDistFolder', 'optimizeImages', 'usemin']);
+gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles', 'optimizeImages', 'usemin']);
