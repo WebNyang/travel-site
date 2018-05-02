@@ -2,6 +2,9 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const usemin = require('gulp-usemin');
+const rev = require('gulp-rev');
+const cssnano = require('gulp-cssnano');
+const uglify = require('gulp-uglify');
 
 gulp.task('deleteDistFolder', function() {
   return del("./dist");
@@ -19,7 +22,10 @@ gulp.task('optimizeImages', ['deleteDistFolder'], function() {
 
 gulp.task('usemin', ['deleteDistFolder'], function() {
   return gulp.src("./app/index.html")
-    .pipe(usemin())
+    .pipe(usemin({
+      css: [function() {return rev()}, function() {return cssnano()}],
+      js: [function() {return rev()}, function() {return uglify()}]
+    }))
     .pipe(gulp.dest("./dist"));
 });
 
