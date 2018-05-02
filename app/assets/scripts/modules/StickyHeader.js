@@ -13,8 +13,12 @@ class StickyHeder {
     var thisClass = this;
     new Waypoint({
       element: thisClass.headerTriggerElement[0],
-      handler: function() {
-        thisClass.siteHeader.addClass("site-header--dark");
+      handler: function(direction) {
+        if (direction == "down") {
+          thisClass.siteHeader.addClass("site-header--dark");
+        } else {
+          thisClass.siteHeader.removeClass("site-header--dark");
+        }
       }
     });
   }
