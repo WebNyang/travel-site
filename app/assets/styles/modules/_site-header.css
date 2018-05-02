@@ -3,6 +3,11 @@
   position: absolute;
   width: 100%;
   z-index: 2;
+  transition: background-color .3s ease-out;
+
+  &--is-expended {
+    background-color: rgba($mainBlue, .55);
+  }
 
   @mixin atMedium {
     background-color: rgba($mainBlue, .3);
@@ -48,17 +53,22 @@
   }
 
   &__menu-content {
-    display: none;
+    opacity: 0;
+    transition: all .3s ease-out;
+    position: relative;
+    z-index: -10;
     padding-top: 100px;
     text-align: center;
 
     @mixin atMedium {
-      display: block;
+      opacity: 1;
+      z-index: 1;
       padding-top: 0;
     }
 
     &--is-visible {
-      display: block;
+      opacity: 1;
+      z-index: 1;
     }
   }
 }
