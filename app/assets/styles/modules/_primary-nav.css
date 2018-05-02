@@ -20,6 +20,7 @@
     list-style: none;
     display: inline-block;
     padding-top: 12px;
+    padding-bottom: 12px;
     padding-right: 7px;
 
     @mixin atMedium {
