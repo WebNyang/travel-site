@@ -51,7 +51,8 @@
       display: none;
     }
 
-    &__top {
+    &::before {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -69,7 +70,8 @@
       background: #fff;
     }
 
-    &__bottom {
+    &::after {
+      content: "";
       position: absolute;
       top: 16px;
       left: 0;
