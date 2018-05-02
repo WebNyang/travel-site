@@ -41,8 +41,7 @@
 
   &__menu-icon {
     width: 20px;
-    height: 20px;
-    background-color: #fff;
+    height: 19px;
     position: absolute;
     z-index: 10;
     top: 10px;
@@ -50,6 +49,33 @@
 
     @mixin atMedium {
       display: none;
+    }
+
+    &__top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background: #fff;
+    }
+
+    &__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background: #fff;
+    }
+
+    &__bottom {
+      position: absolute;
+      top: 16px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background: #fff;
     }
   }
 
